@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/madsstenhoj/mulle-card-game/static/css/main.5f361e03.chunk.css",
-    "main.js": "/madsstenhoj/mulle-card-game/static/js/main.c531a567.chunk.js",
-    "main.js.map": "/madsstenhoj/mulle-card-game/static/js/main.c531a567.chunk.js.map",
-    "runtime-main.js": "/madsstenhoj/mulle-card-game/static/js/runtime-main.c90b19aa.js",
-    "runtime-main.js.map": "/madsstenhoj/mulle-card-game/static/js/runtime-main.c90b19aa.js.map",
-    "static/js/2.cc908b8e.chunk.js": "/madsstenhoj/mulle-card-game/static/js/2.cc908b8e.chunk.js",
-    "static/js/2.cc908b8e.chunk.js.map": "/madsstenhoj/mulle-card-game/static/js/2.cc908b8e.chunk.js.map",
-    "index.html": "/madsstenhoj/mulle-card-game/index.html",
-    "precache-manifest.3212bcd63ee27bd0804d38b013146e05.js": "/madsstenhoj/mulle-card-game/precache-manifest.3212bcd63ee27bd0804d38b013146e05.js",
-    "service-worker.js": "/madsstenhoj/mulle-card-game/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/madsstenhoj/mulle-card-game/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.cc908b8e.chunk.js.LICENSE.txt": "/madsstenhoj/mulle-card-game/static/js/2.cc908b8e.chunk.js.LICENSE.txt"
+    "main.css": "/mulle-card-game/static/css/main.5f361e03.chunk.css",
+    "main.js": "/mulle-card-game/static/js/main.a83c250d.chunk.js",
+    "main.js.map": "/mulle-card-game/static/js/main.a83c250d.chunk.js.map",
+    "runtime-main.js": "/mulle-card-game/static/js/runtime-main.93b93f4c.js",
+    "runtime-main.js.map": "/mulle-card-game/static/js/runtime-main.93b93f4c.js.map",
+    "static/js/2.a94283cb.chunk.js": "/mulle-card-game/static/js/2.a94283cb.chunk.js",
+    "static/js/2.a94283cb.chunk.js.map": "/mulle-card-game/static/js/2.a94283cb.chunk.js.map",
+    "index.html": "/mulle-card-game/index.html",
+    "precache-manifest.d6ad6626df0bae46d2b0bab841e30cc8.js": "/mulle-card-game/precache-manifest.d6ad6626df0bae46d2b0bab841e30cc8.js",
+    "service-worker.js": "/mulle-card-game/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/mulle-card-game/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.a94283cb.chunk.js.LICENSE.txt": "/mulle-card-game/static/js/2.a94283cb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c90b19aa.js",
-    "static/js/2.cc908b8e.chunk.js",
+    "static/js/runtime-main.93b93f4c.js",
+    "static/js/2.a94283cb.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.c531a567.chunk.js"
+    "static/js/main.a83c250d.chunk.js"
   ]
 }
