@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mulle-card-game/precache-manifest.33590fa40b80101a76a2e2a69588572b.js"
+  "/mulle-card-game/precache-manifest.90406e52fd025f54c1a154a2b2b8f821.js"
 );
 
 self.addEventListener('message', (event) => {

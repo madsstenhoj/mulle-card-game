@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mulle-card-game/static/css/main.5f361e03.chunk.css",
-    "main.js": "/mulle-card-game/static/js/main.590e99b0.chunk.js",
-    "main.js.map": "/mulle-card-game/static/js/main.590e99b0.chunk.js.map",
+    "main.js": "/mulle-card-game/static/js/main.7da89e42.chunk.js",
+    "main.js.map": "/mulle-card-game/static/js/main.7da89e42.chunk.js.map",
     "runtime-main.js": "/mulle-card-game/static/js/runtime-main.93b93f4c.js",
     "runtime-main.js.map": "/mulle-card-game/static/js/runtime-main.93b93f4c.js.map",
     "static/js/2.20544be1.chunk.js": "/mulle-card-game/static/js/2.20544be1.chunk.js",
     "static/js/2.20544be1.chunk.js.map": "/mulle-card-game/static/js/2.20544be1.chunk.js.map",
     "index.html": "/mulle-card-game/index.html",
-    "precache-manifest.33590fa40b80101a76a2e2a69588572b.js": "/mulle-card-game/precache-manifest.33590fa40b80101a76a2e2a69588572b.js",
+    "precache-manifest.90406e52fd025f54c1a154a2b2b8f821.js": "/mulle-card-game/precache-manifest.90406e52fd025f54c1a154a2b2b8f821.js",
     "service-worker.js": "/mulle-card-game/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/mulle-card-game/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.20544be1.chunk.js.LICENSE.txt": "/mulle-card-game/static/js/2.20544be1.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.93b93f4c.js",
     "static/js/2.20544be1.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.590e99b0.chunk.js"
+    "static/js/main.7da89e42.chunk.js"
   ]
 }
