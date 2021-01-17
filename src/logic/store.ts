@@ -1,4 +1,4 @@
-import { observable, action, toJS } from "mobx";
+import { observable, action } from "mobx";
 
 export interface IPlayingCard {
   id: number;
@@ -63,7 +63,7 @@ class PlayMaker {
     this.playerId = playerId;
     this.cards = this.createDeck(2);
     this.shuffleCards();
-    this.addPlayers(2);
+    this.addPlayers(3);
 
     this.cardPiles.push({
       position: "main",
@@ -163,7 +163,8 @@ class PlayMaker {
 
     if (
       (value === "2" && color === "spar.png") ||
-      (value === "10" && color === "ruder.png")
+      (value === "10" && color === "ruder.png") ||
+      (value === "5" && color === "spar.png")
     ) {
       return 2;
     }
@@ -206,7 +207,7 @@ class PlayMaker {
 
       this.players.push({
         id: playerId,
-        name: "",
+        name: this.getPlayerName(playerId),
         pointsInTotal: 0
       });
 
@@ -234,6 +235,21 @@ class PlayMaker {
         pileType: PileType.PLAYER
       });
     }
+  }
+
+  getPlayerName(playerId: string) {
+    switch (playerId) {
+      case "player1":
+        return "Mads";
+      case "player2":
+        return "Anna";
+      case "player3":
+        return "Farmor";
+      case "player4":
+        return "Farfar";
+    }
+
+    return "";
   }
 
   dealCardsToAllPlayers(amount: number) {
@@ -295,7 +311,7 @@ class PlayMaker {
     const toPile = `${this.playerId}_${PlayerPiles.POINTS}`;
 
     for (const cardId of cardIds!) {
-      this.moveCardFromOnePileToAnother(cardId, toPile);
+      this.emitCardMove(toPile, cardId);
     }
   }
 
@@ -312,6 +328,7 @@ class PlayMaker {
             gameStateChange.move.toPile
           );
         }
+        this.selectedCardId = undefined;
       }
     } catch (e) {
       console.log(e);

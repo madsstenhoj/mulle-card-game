@@ -29,22 +29,22 @@ class Player extends Component<IProps> {
 
   @computed
   get points() {
-    const { store } = this.props;
+    const { store, playerId } = this.props;
 
     if (!store) {
       return 0;
     }
 
     let pointCardIds = store.getCardsForPile(
-      `${store.playerId}_${PlayerPiles.POINTS}`
+      `${playerId}_${PlayerPiles.POINTS}`
     );
 
     let mulleCardIds = store.getCardsForPile(
-      `${store.playerId}_${PlayerPiles.MULLE}`
+      `${playerId}_${PlayerPiles.MULLE}`
     );
 
     let svupperCardIds = store.getCardsForPile(
-      `${store.playerId}_${PlayerPiles.SVUPPER}`
+      `${playerId}_${PlayerPiles.SVUPPER}`
     );
 
     let points = 0;
@@ -61,18 +61,18 @@ class Player extends Component<IProps> {
 
   @computed
   get loosePoints() {
-    const { store } = this.props;
+    const { store, playerId } = this.props;
 
     if (!store) {
       return 0;
     }
 
     let svuppereCardIds = store.getCardsForPile(
-      `${store.playerId}_${PlayerPiles.SVUPPER}`
+      `${playerId}_${PlayerPiles.SVUPPER}`
     );
 
     let mulleCardIds = store.getCardsForPile(
-      `${store.playerId}_${PlayerPiles.MULLE}`
+      `${playerId}_${PlayerPiles.MULLE}`
     );
 
     let points = 0;
@@ -97,14 +97,12 @@ class Player extends Component<IProps> {
 
     return (
       <Segment>
-        <h2>{this.props.playerId}</h2>
+        <h2>{store!.getPlayerName(this.props.playerId)}</h2>
         <Segment>
-          <PileOfCards
+          <PlayArea
             piled={false}
             backsideUp={this.props.playerId !== this.props.store!.playerId}
-            cardIds={store!.getCardsForPile(
-              `${this.player.id}_${PlayerPiles.HAND}`
-            )}
+            position={`${this.player.id}_${PlayerPiles.HAND}`}
           />
         </Segment>
         <Segment>

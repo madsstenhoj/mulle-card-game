@@ -28,15 +28,7 @@ const PlayArea = inject("store")(
 
     return (
       <>
-        <div
-          ref={drop}
-          style={{
-            backgroundColor: isOver ? "#DDD" : "#EEE",
-            width: 80,
-            height: 130,
-            marginTop: 50
-          }}
-        >
+        <div ref={drop}>
           <PileOfCards
             piled={props.piled}
             cardIds={cardIds}

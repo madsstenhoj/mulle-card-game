@@ -1,8 +1,8 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
-import PlayMaker from "../../logic/store";
+import PlayMaker, { IPlayingCard } from "../../logic/store";
 import PlayingCard from "../PlayingCard";
-import { Card, Popup, Button } from "semantic-ui-react";
+import { Card, Popup, Button, Segment } from "semantic-ui-react";
 
 interface IProps {
   cardIds: number[];
@@ -19,31 +19,62 @@ const PileOfCards = inject("store")(
       ? props.cardIds[props.cardIds.length - 1]
       : undefined;
 
+    const secondUpperCardId =
+      props.cardIds.length > 1 && props.piled && !props.backsideUp
+        ? props.cardIds[props.cardIds.length - 2]
+        : undefined;
+
     const displayTooltip =
-      props.piled && !props.backsideUp && props.cardIds.length > 1;
+      props.piled && !props.backsideUp && props.cardIds.length > 0;
+
+    const sorting = (aCardId: number, bCardId: number) => {
+      const a = props.store!.getPlayingCard(aCardId);
+      const b = props.store!.getPlayingCard(bCardId);
+
+      const diff = b.number - a.number;
+      const pointDiff = b.points - a.points;
+
+      if (a.color === "joker.png") {
+        return -1;
+      }
+
+      if (pointDiff === 0) {
+        return diff;
+      }
+
+      return pointDiff;
+    };
 
     return (
-      <div style={{ position: "relative" }}>
-        <div style={{ position: "absolute", top: -30 }}>
+      <Segment.Group style={{ minWidth: 70 }}>
+        <Segment textAlign={"center"}>
           {props.piled && (
             <Button
-              size={"small"}
+              size={"large"}
               onClick={() => props.store!.putCard(props.position)}
               icon={"arrow alternate circle down"}
             />
           )}
           {props.title && <span>{props.title}</span>}
-        </div>
+        </Segment>
         {upperCardId !== undefined && (
           <>
             {props.piled ? (
-              <div style={{ paddingTop: 20 }}>
-                <PlayingCard
-                  cardId={upperCardId}
-                  backsideUp={props.backsideUp}
-                  selectable={props.store!.selectedCardId === undefined}
-                />
-                <Button.Group>
+              <>
+                <Segment piled={true} textAlign={"center"}>
+                  {secondUpperCardId !== undefined && (
+                    <PlayingCard
+                      cardId={secondUpperCardId}
+                      backsideUp={false}
+                      selectable={false}
+                    />
+                  )}
+
+                  <PlayingCard
+                    cardId={upperCardId}
+                    backsideUp={props.backsideUp}
+                    selectable={props.store!.selectedCardId === undefined}
+                  />
                   <Popup
                     flowing={true}
                     trigger={<Button content={props.cardIds.length} />}
@@ -59,25 +90,30 @@ const PileOfCards = inject("store")(
                       </span>
                     }
                   />
-                  {displayTooltip && (
-                    <Popup
-                      trigger={
-                        <Button
-                          icon={"globe"}
-                          onClick={() =>
-                            props.store!.takePileHome(props.position!)
-                          }
-                        />
-                      }
-                      content={"Tag bunken hjem"}
-                      inverted={true}
-                    />
-                  )}
-                </Button.Group>
-              </div>
+                </Segment>
+                <Segment textAlign={"center"}>
+                  <Button.Group>
+                    {displayTooltip && (
+                      <Popup
+                        trigger={
+                          <Button
+                            size={"large"}
+                            icon={"globe"}
+                            onClick={() =>
+                              props.store!.takePileHome(props.position!)
+                            }
+                          />
+                        }
+                        content={"Tag bunken hjem"}
+                        inverted={true}
+                      />
+                    )}
+                  </Button.Group>
+                </Segment>
+              </>
             ) : (
               <Card.Group itemsPerRow={10}>
-                {props.cardIds.sort().map(cardId => (
+                {props.cardIds.sort(sorting).map(cardId => (
                   <PlayingCard
                     backsideUp={props.backsideUp}
                     cardId={cardId}
@@ -88,7 +124,7 @@ const PileOfCards = inject("store")(
             )}
           </>
         )}
-      </div>
+      </Segment.Group>
     );
   })
 );
