@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5583f5c13142e101f05f5f8aa8e2c2e3",
+    "revision": "269a020d191fa384cd280cf13131d35e",
     "url": "/mulle-card-game/index.html"
   },
   {
-    "revision": "826f83f2d2a9d9c67426",
+    "revision": "ad16b8d611d8459df7d4",
     "url": "/mulle-card-game/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mulle-card-game/static/js/2.d9e067c2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "826f83f2d2a9d9c67426",
-    "url": "/mulle-card-game/static/js/main.2e3ae3f2.chunk.js"
+    "revision": "ad16b8d611d8459df7d4",
+    "url": "/mulle-card-game/static/js/main.01e44c85.chunk.js"
   },
   {
     "revision": "114a6584a984383ea5f2",
